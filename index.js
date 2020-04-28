@@ -30,13 +30,12 @@ function submitData(value1, value2) {
 
     return fetch(usersURL, configurationObject)
     .then(res => res.json()) 
-    // .then(newUser => {
-    //     console.log("successfuly created a new user", newUser);
-    //     renderUser(newUser)
-    // })
+
+        //adds the ID to the inner html of the body
     .then( function ( object ) {
         document.body.innerHTML = object[ "id" ]
       } )
+      //error message incase the above errors out 
     .catch( function ( error ) {
         document.body.innerHTML = error.message
       } )
